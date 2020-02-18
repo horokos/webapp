@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Webside</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" type="text/css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+</head>
+<body>
+  <nav class="navbar navbar-dark bg-primary">
+    <a class="nav-link  ml-5" href="{{ url_for('index') }}">HOME</a>
+    <a class="nav-link" href="{{ url_for('bikes') }}">BIKES</a>
+    <a class="nav-link" href="{{ url_for('info') }}">INFO</a>
+    <div class="ml-auto row">
+      <a class="nav-link col" href="{{ url_for('login') }}">LOGIN</a>
+      <a class="nav-link col" href="{{ url_for('register') }}">REGISTER</a>
+    </div>
+  </nav>
+  <div class="container mt-5">
+<h1 class="text-center">Wypozyczalnia</h1>
+<hr>
+  <div class="row">
+    <div class="col-sm-8">
+      <iframe src="https://maps.google.com/maps?q=x%20lo%20krak%C3%B3w&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="320" frameborder="0" style="border:0" allowfullscreen></iframe>
+    </div>
+
+    <div class="col-sm-4">
+        <h3>Dane Kontaktowe</h3>
+        <h4 class="pt-2">Adres</h4>
+        <i class="fas fa-globe" style="color:#000"></i> address<br>
+        <h4 class="pt-2">Telefon</h4>
+        <i class="fas fa-phone" style="color:#000"></i> 123456789<br>
+        <h4 class="pt-2">Email</h4>
+        <i class="fa fa-envelope" style="color:#000"></i> test@test.com<br>
+      </div>
+  </div>
+</div>
+</body>
+</html>
