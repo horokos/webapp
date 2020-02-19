@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Webside</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" type="text/css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+</head>
+<body>
+  <nav class="navbar navbar-dark bg-primary">
+    <a class="nav-link  ml-5" href="{{ url_for('index') }}">HOME</a>
+    <a class="nav-link" href="{{ url_for('bikes') }}">BIKES</a>
+    <a class="nav-link" href="{{ url_for('info') }}">INFO</a>
+    <div class="ml-auto row">
+      <a class="nav-link col" href="{{ url_for('login') }}">LOG IN</a>
+      <a class="nav-link col" href="{{ url_for('register') }}">REGISTER</a>
+    </div>
+  </nav>
+{% block content %}{% endblock %}
+</body>
+</html>

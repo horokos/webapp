@@ -1,51 +1,39 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>My Webside</title>
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" type="text/css" />
-</head>
-<body>
-  <nav class="navbar navbar-dark bg-primary">
-    <a class="nav-link ml-5" href="{{ url_for('index') }}">HOME</a>
-    <a class="nav-link" href="{{ url_for('bikes') }}">BIKES</a>
-    <a class="nav-link" href="{{ url_for('info') }}">INFO</a>
-    <div class="ml-auto row">
-      <a class="nav-link col" href="{{ url_for('login') }}">LOGIN</a>
-      <a class="nav-link col" href="{{ url_for('register') }}">REGISTER</a>
-    </div>
-  </nav>
+{% extends "layout.html" %}
+{% block content %}
   <div id="login">
         <div class="container">
             <div id="login-row" class="row justify-content-center align-items-center">
                 <div id="login-column" class="col-md-6">
                     <div id="login-box" class="col-md-12">
-                        <form id="login-form" class="form" action="" method="post">
+                        <form id="login-form" class="form" action="{{ url_for('register') }}" method="post">
                             <h3 class="text-center text-primary">Register</h3>
                             <div class="form-group">
-                                <label for="email" class="text-primary">Email:</label><br>
+                                <label for="email" class="text-primary"><h4>Email:</h4></label><br>
                                 <input type="text" name="email" id="email" class="form-control">
                             </div>
                             <div class="form-group">
-                                <label for="username" class="text-primary">Username:</label><br>
+                                <label for="username" class="text-primary"><h4>Username:</h4></label><br>
                                 <input type="text" name="username" id="username" class="form-control">
                             </div>
                             <div class="form-group">
-                                <label for="password" class="text-primary">Password:</label><br>
+                                <label for="password" class="text-primary"><h4>Password:</h4></label><br>
                                 <input type="text" name="password" id="password" class="form-control">
                             </div>
                             <div class="form-group">
-                                <input type="submit" name="submit" class="btn btn-primary btn-md" value="submit">
+                                <input type="submit" name="submit" class="btn btn-primary btn-md" value="register">
                             </div>
                             <div id="login-link" class="text-right">
                                 <a href="{{ url_for('login') }}" class="text-primary">Login here</a>
                             </div>
                         </form>
+                        {% if msg %}
+                            <div class="alert alert-danger">
+                                {{ msg }}
+                            </div>
+                        {% endif %}
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</body>
-</html>
+{% endblock content %}
