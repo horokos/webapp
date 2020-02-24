@@ -1,4 +1,4 @@
-{% if 'loggedin' in session %}
+{% if session['loggedin'] %}
   {% extends "layoutloggedin.html" %}
 {% else %}
   {% extends "layout.html" %}

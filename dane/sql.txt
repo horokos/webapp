@@ -1,0 +1,53 @@
+CREATE TABLE `accounts` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `username` varchar(50) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `imie` varchar(45) NOT NULL,
+  `nazwisko` varchar(45) NOT NULL,
+  `telefon` int NOT NULL,
+  `miescowosc` varchar(45) NOT NULL,
+  `kod_pocztowy` varchar(45) NOT NULL,
+  `ulica` varchar(45) NOT NULL,
+  `dom` varchar(45) NOT NULL,
+  `mieszkanie` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_adresy_idx` (`miescowosc`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8
+
+CREATE TABLE `kat_cenowe` (
+  `id_kat_cenowej` int NOT NULL AUTO_INCREMENT,
+  `cena` varchar(45) NOT NULL,
+  PRIMARY KEY (`id_kat_cenowej`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8
+
+CREATE TABLE `modele` (
+  `id_modelu` int NOT NULL AUTO_INCREMENT,
+  `nazwa_modelu` varchar(45) NOT NULL,
+  `typ_roweru` varchar(45) NOT NULL,
+  `producent` varchar(45) NOT NULL,
+  `wyposazenie` varchar(255) NOT NULL,
+  `id_kat_cenowej` int NOT NULL,
+  PRIMARY KEY (`id_modelu`),
+  KEY `rfefe_idx` (`id_kat_cenowej`),
+  CONSTRAINT `fk_cena` FOREIGN KEY (`id_kat_cenowej`) REFERENCES `kat_cenowe` (`id_kat_cenowej`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8
+
+CREATE TABLE `rowery` (
+  `id_roweru` int NOT NULL AUTO_INCREMENT,
+  `id_modelu` int NOT NULL,
+  `rozmiar` varchar(10) NOT NULL,
+  `kolor` varchar(45) NOT NULL,
+  PRIMARY KEY (`id_roweru`),
+  KEY `fk_model_idx` (`id_modelu`),
+  CONSTRAINT `fk_model` FOREIGN KEY (`id_modelu`) REFERENCES `modele` (`id_modelu`)
+) ENGINE=InnoDB AUTO_INCREMENT=150 DEFAULT CHARSET=utf8
+
+CREATE TABLE `zamowienia` (
+  `id_zamowienia` int NOT NULL AUTO_INCREMENT,
+  `id_klienta` int NOT NULL,
+  `id_roweru` int NOT NULL,
+  `data_poczatkowa` datetime NOT NULL,
+  `data_koncowa` datetime NOT NULL,
+  PRIMARY KEY (`id_zamowienia`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8

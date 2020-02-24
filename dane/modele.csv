@@ -1,0 +1,12 @@
+"id_modelu";"nazwa_modelu";"typ_roweru";"producent";"wyposazenie";"id_kat_cenowej"
+1;"model_6";"typ_2";"producent_1";"wyp_1, wyp_6, ";3
+2;"model_3";"typ_1";"producent_4";"wyp_2, wyp_3, wyp_4, wyp_5, wyp_7, ";2
+3;"model_10";"typ_1";"producent_2";"wyp_2, wyp_3, wyp_4, wyp_5, wyp_6, wyp_7, ";4
+4;"model_8";"typ_2";"producent_3";"wyp_1, wyp_2, wyp_5, ";6
+5;"model_4";"typ_2";"producent_4";"wyp_1, wyp_2, wyp_3, wyp_5, wyp_7, ";3
+6;"model_7";"typ_1";"producent_3";"wyp_1, wyp_2, wyp_5, ";2
+7;"model_11";"typ_1";"producent_4";"wyp_2, wyp_3, wyp_4, wyp_6, ";2
+8;"model_9";"typ_2";"producent_2";"wyp_2, wyp_6, wyp_7, ";1
+9;"model_5";"typ_2";"producent_2";"wyp_4, wyp_5, ";6
+10;"model_2";"typ_1";"producent_4";"wyp_1, wyp_2, wyp_3, wyp_4, wyp_6, ";6
+11;"model_1";"typ_1";"producent_4";"wyp_1, wyp_3, wyp_6, wyp_7, ";2
