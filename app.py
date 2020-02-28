@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for, session
 import re
 from math import ceil
-import time
+from time import strptime
 
 import mysql.connector
 
@@ -264,8 +264,13 @@ def pick(model_id=None):
             if request.method == 'POST' and 'start_date' in request.form and 'end_date' in request.form and not 'bike' in request.form:
                 start_date = request.form['start_date']
                 end_date = request.form['end_date']
+                sd = strptime(start_date, '%Y-%m-%d')
+                ed = strptime(end_date, '%Y-%m-%d')
                 if not start_date or not end_date:
                     msg = 'Wybierz daty'
+                    return render_template('pick.html', msg=msg, model_id=model_id)
+                elif sd > ed:
+                    msg = 'Wybierz poprawne daty'
                     return render_template('pick.html', msg=msg, model_id=model_id)
                 else:
                     dates = [start_date, end_date]
